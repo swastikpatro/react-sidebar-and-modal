@@ -425,18 +425,24 @@ Sidebar
 }
 
 .mySection {
+  display: grid;
+  place-items: center;
+  color: var(--black);
+  text-transform: capitalize;
+  font-size: 2rem;
   height: 100vh;
+  letter-spacing: var(--letterSpacing);
+}
+
+.mySection1 {
   background: orange;
 }
 .mySection2 {
-  height: 100vh;
   background: white;
 }
 .mySection3 {
-  height: 100vh;
   background: green;
 }
 .mySection4 {
-  height: 100vh;
   background: blue;
 }

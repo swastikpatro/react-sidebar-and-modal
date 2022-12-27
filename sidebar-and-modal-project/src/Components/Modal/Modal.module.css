@@ -1,0 +1,44 @@
+body {
+  position: relative;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 20rem;
+  width: 80vw;
+  max-width: 500px;
+  border-radius: var(--borderRadius);
+  padding: 1rem;
+  background: #fff;
+  z-index: 100;
+  box-shadow: var(--shadow-4);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.modalContent {
+  margin-top: -2rem;
+}
+
+.modalContent p {
+  margin: 0;
+  letter-spacing: var(--letterSpacing);
+  font-size: 1.25rem;
+}
+
+.modalContent a {
+  font-size: 2rem;
+  padding-left: 0.25rem;
+  color: rgb(0, 119, 255);
+  transition: var(--transition);
+}
+
+.modalContent a:hover {
+  color: hsl(212, 100%, 40%);
+}
+.cancelBtn {
+  composes: cancelBtn from '../Sidebar/Sidebar.module.css';
+}
