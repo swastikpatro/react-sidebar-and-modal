@@ -4,7 +4,12 @@ import { links, social } from '../../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import useDisableScroll from '../useDisableScroll';
 
-const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: any;
+}
+
+const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
   useDisableScroll(isSidebarOpen);
 
   return (

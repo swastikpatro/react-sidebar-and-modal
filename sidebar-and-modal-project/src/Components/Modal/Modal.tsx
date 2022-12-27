@@ -5,7 +5,12 @@ import { BsTwitter } from 'react-icons/bs';
 import useDisableScroll from '../useDisableScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Modal = ({ isModalOpen, setIsModalOpen }) => {
+interface ModalProps {
+  isModalOpen: boolean;
+  setIsModalOpen: any;
+}
+
+const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
   useDisableScroll(isModalOpen);
   return (
     <AnimatePresence>

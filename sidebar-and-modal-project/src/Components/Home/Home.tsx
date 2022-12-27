@@ -3,12 +3,19 @@ import { IoInformationCircleOutline } from 'react-icons/io5';
 import styles from './Home.module.css';
 import logo from '../../assets/logo.svg';
 
+interface HomeProps {
+  isModalOpen: boolean;
+  isSidebarOpen: boolean;
+  setIsModalOpen: any;
+  setIsSidebarOpen: any;
+}
+
 const Home = ({
   isModalOpen,
   setIsModalOpen,
   isSidebarOpen,
   setIsSidebarOpen,
-}) => {
+}: HomeProps) => {
   const isSidebarOrModalOpen = isSidebarOpen || isModalOpen;
   return (
     <section className={styles.home}>
