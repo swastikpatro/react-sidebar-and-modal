@@ -1,0 +1,98 @@
+.home {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.showOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: all;
+}
+
+.scrollingDisabled {
+  /* height: 100vh; */
+  overflow: hidden;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  padding-top: 0.5rem;
+  background: var(--white);
+  box-shadow: var(--shadow-3);
+}
+
+.navContainer {
+  width: 95vw;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding-top: 1rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.sidebarToggle {
+  /* position: fixed;
+  top: 1rem;
+  right: 2rem; */
+  font-size: 1.5rem;
+  border-color: transparent;
+  background: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-radius: 50%;
+  padding: 0.35rem 0.5rem;
+  display: grid;
+  color: var(--white);
+  background: #02008c;
+  border: 2px solid var(--white);
+  /* animation */
+}
+
+.sidebarToggle:hover {
+  background: var(--primary-200);
+  color: #02008c;
+}
+
+.sidebarToggle.cancelBtn {
+  background: var(--red-dark);
+  color: var(--white);
+}
+
+.sidebarToggle.cancelBtn:hover {
+  color: var(--red-dark);
+  background: var(--red-light);
+}
+
+.modalBtn {
+  font-size: 2rem;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modalBtn:hover {
+  color: var(--grey-500);
+}
+
+.logo {
+  /* border: 2px solid red; */
+  padding-bottom: 0.5rem;
+}
