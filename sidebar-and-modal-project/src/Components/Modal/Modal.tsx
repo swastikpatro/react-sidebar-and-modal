@@ -1,7 +1,7 @@
 import styles from './Modal.module.css';
 import { FaTimes } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
-import { BsTwitter } from 'react-icons/bs';
+// import { BsTwitter } from 'react-icons/bs';
 import useDisableScroll from '../useDisableScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -17,15 +17,15 @@ const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
       <motion.div
         initial={{
           x: '-50%',
-          y: '-220%',
+          y: '-250%',
           opacity: 0,
         }}
         animate={{
           opacity: 1,
-          y: isModalOpen ? '-50%' : '-220%',
+          y: isModalOpen ? '-50%' : '-250%',
         }}
         exit={{
-          y: '-220%',
+          y: '-250%',
           opacity: 0,
         }}
         className={styles.modal}

@@ -429,7 +429,7 @@ Sidebar
   place-items: center;
   color: var(--black);
   text-transform: capitalize;
-  font-size: 2rem;
+  font-size: 1.5rem;
   height: 100vh;
   letter-spacing: var(--letterSpacing);
 }
@@ -445,4 +445,10 @@ Sidebar
 }
 .mySection4 {
   background: blue;
+}
+
+@media screen and (min-width: 786px) {
+  .mySection {
+    font-size: 2rem;
+  }
 }

@@ -19,10 +19,10 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
           x: '-100%',
         }}
         animate={{
-          x: isSidebarOpen ? '-10%' : '-100%',
+          x: isSidebarOpen ? '-3rem' : '-100%',
         }}
         exit={{
-          x: '-10%',
+          x: '-3rem',
         }}
         className={styles.sidebar}
       >
