@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: calc(110vw + 1rem);
-  max-width: 400px;
+  max-width: 350px;
   height: 100vh;
   background: var(--primary-900);
   box-shadow: var(--shadow-light-4);
