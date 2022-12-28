@@ -105,11 +105,22 @@ body::-webkit-scrollbar-thumb {
   background-color: cyan !important;
   border-radius: 0.25rem !important;
   cursor: pointer;
+  width: 3px !important;
 }
 
 .scrollbar-track-y {
   background-color: var(--black) !important;
   border-radius: 0 !important;
+  width: 4px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .scrollbar-thumb {
+    width: 8px !important;
+  }
+  .scrollbar-track-y {
+    width: 9px !important;
+  }
 }
 
 p {
