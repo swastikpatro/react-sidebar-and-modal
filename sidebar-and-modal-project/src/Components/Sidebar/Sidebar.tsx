@@ -3,14 +3,13 @@ import { FaTimes } from 'react-icons/fa';
 import { links, social } from '../../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import useDisableScroll from '../useDisableScroll';
+import { useStateContext } from '../../App';
+import { StateContextInterface } from '../../types';
 
-interface SidebarProps {
-  isSidebarOpen: boolean;
-  setIsSidebarOpen: any;
-}
-
-const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
-  useDisableScroll(isSidebarOpen);
+const Sidebar = () => {
+  const { isSidebarOpen, closeSidebar }: StateContextInterface =
+    useStateContext();
+  useDisableScroll(isSidebarOpen!);
 
   return (
     <AnimatePresence>
@@ -26,10 +25,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
         }}
         className={styles.sidebar}
       >
-        <button
-          className={styles.cancelBtn}
-          onClick={() => setIsSidebarOpen(false)}
-        >
+        <button className={styles.cancelBtn} onClick={closeSidebar}>
           <FaTimes />
         </button>
 

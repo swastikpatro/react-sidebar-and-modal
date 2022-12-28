@@ -1,17 +1,15 @@
 import styles from './Modal.module.css';
 import { FaTimes } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
-// import { BsTwitter } from 'react-icons/bs';
+import { BsTwitter } from 'react-icons/bs';
 import useDisableScroll from '../useDisableScroll';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useStateContext } from '../../App';
+import { StateContextInterface } from '../../types';
 
-interface ModalProps {
-  isModalOpen: boolean;
-  setIsModalOpen: any;
-}
-
-const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
-  useDisableScroll(isModalOpen);
+const Modal = () => {
+  const { isModalOpen, closeModal }: StateContextInterface = useStateContext();
+  useDisableScroll(isModalOpen!);
   return (
     <AnimatePresence>
       <motion.div
@@ -30,10 +28,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
         }}
         className={styles.modal}
       >
-        <button
-          className={styles.cancelBtn}
-          onClick={() => setIsModalOpen(false)}
-        >
+        <button className={styles.cancelBtn} onClick={closeModal}>
           <FaTimes />
         </button>
 
@@ -43,9 +38,12 @@ const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
             <a href='https://github.com/swastikpatro/'>
               <AiFillGithub />
             </a>
-            {/* <a href='https://twitter.com/Swastik2001'>
+          </p>
+          <p>
+            Reach out to me on{' '}
+            <a href='https://twitter.com/Swastik2001'>
               <BsTwitter />
-            </a> */}
+            </a>
           </p>
           <p>Thanks for visiting 💖🧡</p>
         </div>

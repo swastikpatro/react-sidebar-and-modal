@@ -2,37 +2,28 @@ import { FaBars } from 'react-icons/fa';
 import { IoInformationCircleOutline } from 'react-icons/io5';
 import styles from './Home.module.css';
 import logo from '../../assets/logo.svg';
+import { useStateContext } from '../../App';
+import { StateContextInterface } from '../../types';
+// import { useStateContext } from '../../DataContext';
 
-interface HomeProps {
-  isModalOpen: boolean;
-  isSidebarOpen: boolean;
-  setIsModalOpen: any;
-  setIsSidebarOpen: any;
-}
-
-const Home = ({
-  isModalOpen,
-  setIsModalOpen,
-  isSidebarOpen,
-  setIsSidebarOpen,
-}: HomeProps) => {
+const Home = () => {
+  const {
+    openSidebar,
+    openModal,
+    isSidebarOpen,
+    isModalOpen,
+  }: StateContextInterface = useStateContext();
   const isSidebarOrModalOpen = isSidebarOpen || isModalOpen;
   return (
     <section className={styles.home}>
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <button
-            className={styles.sidebarToggle}
-            onClick={() => setIsSidebarOpen(true)}
-          >
+          <button className={styles.sidebarToggle} onClick={openSidebar}>
             <FaBars />
           </button>
           <img src={logo} className={styles.logo} alt='logo' />
 
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className={styles.modalBtn}
-          >
+          <button onClick={openModal} className={styles.modalBtn}>
             <IoInformationCircleOutline />
           </button>
         </div>
