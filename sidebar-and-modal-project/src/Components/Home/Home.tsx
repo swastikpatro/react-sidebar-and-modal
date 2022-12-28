@@ -35,15 +35,15 @@ const Home = () => {
         <div className='mySection mySection3'>section 3</div>
         <div className='mySection mySection4'>section 4</div>
       </div>
-      <div
-        className={
-          isSidebarOrModalOpen
-            ? `${styles.overlay} ${styles.showOverlay}`
-            : `${styles.overlay}`
-        }
-      ></div>
-      {/* <div className={`${styles.overlay}`}></div> */}
-      <Scroll />
+
+      {isSidebarOrModalOpen ? (
+        <div className={`${styles.overlay} ${styles.showOverlay}`}></div>
+      ) : (
+        <>
+          <div className={`${styles.overlay}`}></div>
+          <Scroll />
+        </>
+      )}
     </section>
   );
 };
