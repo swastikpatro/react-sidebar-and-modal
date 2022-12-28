@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 import logo from '../../assets/logo.svg';
 import { useStateContext } from '../../App';
 import { StateContextInterface } from '../../types';
+import Scroll from '../Scroll';
 // import { useStateContext } from '../../DataContext';
 
 const Home = () => {
@@ -42,6 +43,7 @@ const Home = () => {
         }
       ></div>
       {/* <div className={`${styles.overlay}`}></div> */}
+      <Scroll />
     </section>
   );
 };
