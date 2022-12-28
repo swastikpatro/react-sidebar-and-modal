@@ -62,7 +62,7 @@
 .link:hover {
   background: var(--primary-500);
   padding-left: 0.75em;
-  border-right: 7px solid var(--white);
+  border-right: 5px solid var(--white);
 }
 
 .link span:first-child {

@@ -24,13 +24,17 @@ body {
 }
 
 .modalContent p {
-  margin: 0;
+  margin-bottom: 0;
   letter-spacing: var(--letterSpacing);
   font-size: 1rem;
 }
 
+.modalContent p:first-child {
+  margin-bottom: -0.5rem;
+}
+
 .modalContent a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-left: 0.25rem;
   color: rgb(0, 119, 255);
   transition: var(--transition);
