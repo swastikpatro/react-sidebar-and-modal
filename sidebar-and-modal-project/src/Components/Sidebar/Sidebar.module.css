@@ -24,7 +24,7 @@
   margin-left: 1rem;
   border-radius: 50%;
   font-size: 1.25rem;
-  padding: 0.25rem 0.35rem;
+  padding: 0.35rem 0.4rem;
   display: grid;
   color: var(--red-dark);
   background: var(--red-light);
@@ -109,6 +109,6 @@
     top: 1rem;
     right: 0;
     font-size: 1.5rem;
-    padding: 0.45rem 0.5rem;
+    padding: 0.5rem 0.6rem;
   }
 }
