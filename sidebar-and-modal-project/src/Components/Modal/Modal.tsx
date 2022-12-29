@@ -4,8 +4,8 @@ import { AiFillGithub } from 'react-icons/ai';
 import { BsTwitter } from 'react-icons/bs';
 import useDisableScroll from '../useDisableScroll';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useStateContext } from '../../App';
 import { StateContextInterface } from '../../types';
+import { useStateContext } from '../../StateContextProvider';
 
 const Modal = () => {
   const { isModalOpen, closeModal }: StateContextInterface = useStateContext();

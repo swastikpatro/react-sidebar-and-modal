@@ -3,8 +3,8 @@ import { FaTimes } from 'react-icons/fa';
 import { links, social } from '../../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import useDisableScroll from '../useDisableScroll';
-import { useStateContext } from '../../App';
 import { StateContextInterface } from '../../types';
+import { useStateContext } from '../../StateContextProvider';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar }: StateContextInterface =

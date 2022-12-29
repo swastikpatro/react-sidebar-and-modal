@@ -2,9 +2,9 @@ import { FaBars } from 'react-icons/fa';
 import { IoInformationCircleOutline } from 'react-icons/io5';
 import styles from './Home.module.css';
 import logo from '../../assets/logo.svg';
-import { useStateContext } from '../../App';
 import { StateContextInterface } from '../../types';
 import Scroll from '../Scroll';
+import { useStateContext } from '../../StateContextProvider';
 // import { useStateContext } from '../../DataContext';
 
 const Home = () => {

@@ -1,60 +1,27 @@
 import Home from './Components/Home/Home';
 import Modal from './Components/Modal/Modal';
 import Sidebar from './Components/Sidebar/Sidebar';
-import { createContext, useContext, useState } from 'react';
-import { StateContextInterface } from './types';
+import { createPortal } from 'react-dom';
+import { StateContextProvider } from './StateContextProvider';
 
-export const StateContext = createContext<StateContextInterface>(null!);
-
-export const useStateContext = () => {
-  return useContext(StateContext);
-};
-
-export const StateContextProvider = ({
-  children,
-}: {
-  children: JSX.Element;
-}): JSX.Element => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  const openSidebar = () => {
-    setIsSidebarOpen(true);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-  return (
-    <StateContext.Provider
-      value={{
-        isSidebarOpen,
-        openSidebar,
-        closeSidebar,
-        isModalOpen,
-        openModal,
-        closeModal,
-      }}
-    >
-      {children}
-    </StateContext.Provider>
+function Portal({ children, root }: { children: JSX.Element; root: String }) {
+  return createPortal(
+    children,
+    document.querySelector(`#${root}`) as HTMLDivElement
   );
-};
+}
 
 function App() {
   return (
     <StateContextProvider>
       <>
         <Home />
-        <Modal />
-        <Sidebar />
+        <Portal root='modal-root'>
+          <Modal />
+        </Portal>
+        <Portal root='sidebar-root'>
+          <Sidebar />
+        </Portal>
       </>
     </StateContextProvider>
   );
