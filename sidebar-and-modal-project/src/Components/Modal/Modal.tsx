@@ -15,15 +15,15 @@ const Modal = () => {
       <motion.div
         initial={{
           x: '-50%',
-          y: '-300%',
+          y: '-105vh',
           opacity: 0,
         }}
         animate={{
           opacity: 1,
-          y: isModalOpen ? '-50%' : '-300%',
+          y: isModalOpen ? '-50%' : '-105vh',
         }}
         exit={{
-          y: '-300%',
+          y: '-105vh',
           opacity: 0,
         }}
         className={styles.modal}
